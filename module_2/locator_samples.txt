@@ -1,0 +1,5 @@
+input#firstname                             #- css-селектор, поиск по ID
+//input[@name="lastname"]                   #- xpath-селектор, поиск по name
+input.form-control.email                    #- css-селектор, поиск по class
+//input[@data-behavior="phone"]             #- xpath-селектор, поиск по вашему собственному атрибуту
+//input[@class="form-control address"]      #- xpath-селектор, поиск по class
