@@ -22,7 +22,7 @@ def browser(request):
 
     result = webdriver.Chrome(options=options)
     result.maximize_window()
-    result.implicitly_wait(5)
+    result.implicitly_wait(7)
     result.user_language = language
 
     yield result
