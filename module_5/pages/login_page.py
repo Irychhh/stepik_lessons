@@ -18,7 +18,7 @@ class LoginPage(BasePage):
         # assert True
         assert self.is_element_present(*LoginPageLocators.LOGIN_USERNAME_EMAIL), "E-mail is not presented"
         assert self.is_element_present(*LoginPageLocators.LOGIN_USERNAME_PASSWORD), "PASSWORD is not presented"
-        assert self.is_element_present(*LoginPageLocators.LOGIN_USERNAME_BTN_SUBMIT), "LOGIN BUTTON is not presented"
+        assert self.is_element_present(*LoginPageLocators.GET_LOGIN_BTN_SUBMIT), "LOGIN BUTTON is not presented"
 
     def should_be_register_form(self):
         # реализуйте проверку, что есть форма регистрации на странице
