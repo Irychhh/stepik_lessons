@@ -14,3 +14,9 @@ class LoginPageLocators():
     REGISTRATION_PASSWORD_LOC = (By.CSS_SELECTOR, "#id_registration-password1")
     REGISTRATION_PASSWORD_REPEAT_LOC = (By.CSS_SELECTOR, "#id_registration-password2")
     GET_REGISTRATION_BTN_LOC = (By.CSS_SELECTOR, "[name='registration_submit']")
+
+
+class ProductPageLocators():
+    PRODUCT_NAME_LOC = (By.CSS_SELECTOR, ".product_main h1")
+    PRODUCT_COST_LOC = (By.CSS_SELECTOR, ".product_main .price_color")
+    PRODUCT_BTN_ADD_TO_BASKET_LOC = (By.CSS_SELECTOR, ".btn-add-to-basket")
