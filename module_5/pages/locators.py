@@ -17,6 +17,11 @@ class LoginPageLocators():
 
 
 class ProductPageLocators():
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages .alert-success")
     PRODUCT_NAME_LOC = (By.CSS_SELECTOR, ".product_main h1")
     PRODUCT_COST_LOC = (By.CSS_SELECTOR, ".product_main .price_color")
     PRODUCT_BTN_ADD_TO_BASKET_LOC = (By.CSS_SELECTOR, ".btn-add-to-basket")
+
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
