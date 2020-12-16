@@ -22,6 +22,14 @@ class ProductPageLocators():
     PRODUCT_COST_LOC = (By.CSS_SELECTOR, ".product_main .price_color")
     PRODUCT_BTN_ADD_TO_BASKET_LOC = (By.CSS_SELECTOR, ".btn-add-to-basket")
 
+
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    BASKET_LINK = (By.CSS_SELECTOR, ".btn-group")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
+
+
+class BasketPageLocators:
+    BASKET_IS_EMPTY_MESS = (By.CSS_SELECTOR, "#content_inner")
+    ITEM_BASKET = (By.CSS_SELECTOR, ".basket-items")

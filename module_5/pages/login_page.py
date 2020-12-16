@@ -1,5 +1,6 @@
 from .base_page import BasePage
 from .locators import LoginPageLocators
+import time
 
 
 class LoginPage(BasePage):
@@ -29,3 +30,13 @@ class LoginPage(BasePage):
                                                                                              "presented "
         assert self.is_element_present(*LoginPageLocators.GET_REGISTRATION_BTN_LOC), "Registration button is not " \
                                                                                      "presented "
+
+    def register_new_user(self, email, password):
+        input1 = self.browser.find_element_by_css_selector("#id_registration-email")
+        input1.send_keys(email)
+        input2 = self.browser.find_element_by_css_selector("#id_registration-password1")
+        input2.send_keys(password)
+        input3 = self.browser.find_element_by_css_selector("#id_registration-password2")
+        input3.send_keys(password)
+        submit_register = self.browser.find_element_by_css_selector("[name = 'registration_submit']")
+        submit_register.click()
