@@ -11,7 +11,7 @@ class BasketPage(BasePage):
         mess_empty_basket = self.is_element_present(*BasketPageLocators.BASKET_IS_EMPTY_MESS)
         assert mess_empty_basket, "No message that the cart is empty"
 
-        actual_message_text = self.browser.find_element(BasketPageLocators.BASKET_IS_EMPTY_MESS).text
+        actual_message_text = self.browser.find_element(*BasketPageLocators.BASKET_IS_EMPTY_MESS).text
         assert actual_message_text in empty_mess_tmpl, "Text does not match the expected"
 
     def basket_has_no_product(self):

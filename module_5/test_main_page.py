@@ -39,4 +39,4 @@ class TestMainPage:
         basket_page = BasketPage(browser, browser.current_url)
         # Assert
         basket_page.basket_has_no_product()
-        # basket_page.mess_about_basket_is_empty()
+        basket_page.mess_about_basket_is_empty()

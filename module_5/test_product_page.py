@@ -37,7 +37,7 @@ class TestProductPage:
         # expected_lang_code = browser.user_language
         # template = LANGUAGE_DICT[expected_lang_code: = {add_to_basket_notification_tmp}]
         product_name = "Coders at Work"
-        template = "{} был добавлен в вашу корзину."
+        template = "{} has been added to your basket."
         # Arrange
         link = f"{link}"
         page = ProductPage(browser, link)
@@ -124,9 +124,9 @@ class TestUserAddToBasketFromProductPage:
     def test_user_can_add_product_to_basket(self, browser):
         # Data
         # expected_lang_code = browser.user_language
-        # template = LANGUAGE_DICT[expected_lang_code: = {add_to_basket_notification_tmp}]
+        template = LANGUAGE_DICT.get('ru', {}).get('add_to_basket_notification_tmp', "")
         product_name = "Coders at Work"
-        template = "{} has been added to your basket."
+        #template = "{} has been added to your basket."
         # Arrange
         link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0"
         page = ProductPage(browser, link)
