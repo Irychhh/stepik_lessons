@@ -1,0 +1,6 @@
+
+start browser for test..
+No second alert presented
+Actual product price is £19.99 Expected product price is £19.99
+
+quit browser..

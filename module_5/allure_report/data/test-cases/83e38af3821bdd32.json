@@ -1,0 +1,112 @@
+{
+  "uid" : "83e38af3821bdd32",
+  "name" : "test_guest_can_add_product_to_basket[http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer7]",
+  "fullName" : "module_5.test_product_page.TestProductPage#test_guest_can_add_product_to_basket",
+  "historyId" : "28e343e62f194c14b09363d15b41c810",
+  "time" : {
+    "start" : 1608327523551,
+    "stop" : 1608327526369,
+    "duration" : 2818
+  },
+  "status" : "skipped",
+  "statusMessage" : "XFAIL\n\nAssertionError: 'Product name after adding to cart ' Coders at Work book has been added to your basket.'Open product name is' Coders at Work has been added to your basket.",
+  "statusTrace" : "self = <module_5.test_product_page.TestProductPage object at 0x0000017A79743D30>, browser = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"a7edb0e42bc53a7606617423c0604d80\")>\nlink = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer7'\n\n    @pytest.mark.parametrize('link',\n                             [\"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0\",\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer1\",\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer2\",\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer3\",\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer4\",\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer5\",\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer6\",\n                              pytest.param(\"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo\"\n                                           \"=offer7\", marks=pytest.mark.xfail),\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer8\",\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer9\"])\n    def test_guest_can_add_product_to_basket(self, browser, link):\n        # Data\n        # expected_lang_code = browser.user_language\n        # template = LANGUAGE_DICT[expected_lang_code: = {add_to_basket_notification_tmp}]\n        product_name = \"Coders at Work\"\n        template = \"{} has been added to your basket.\"\n        # Arrange\n        link = f\"{link}\"\n        page = ProductPage(browser, link)\n        page.open()\n        # Act\n        # page.should_be_product_url()\n        page.should_be_name()\n        page.should_be_cost()\n        page.add_product_to_basket()\n        page.solve_quiz_and_get_code()\n        # Assert\n>       page.check_add_to_basket_notification(product_name, template)\n\nmodule_5\\test_product_page.py:52: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <module_5.pages.product_page.ProductPage object at 0x0000017A797FD580>, expected_product_name = 'Coders at Work'\nexpected_notification_template = '{} has been added to your basket.'\n\n    def check_add_to_basket_notification(self, expected_product_name, expected_notification_template):\n        # actual_product_name = self.browser.find_element(By.CSS_SELECTOR, \".alert:nth-child(1) strong\").text\n        # expected_product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME_LOC).text\n        # print(\"Actual product name is \" + actual_product_name, \"Expected product name is \" + expected_product_name)\n        # assert actual_product_name == expected_product_name\n        # {} был добавлен в вашу корзину\n        expected_notification_text = expected_notification_template.format(expected_product_name)\n        actual_notification_text = self.browser.find_element(By.CSS_SELECTOR, \".alert:nth-child(1) .alertinner\").text\n>       assert actual_notification_text == expected_notification_text, \"'Product name after adding to cart ' \" + actual_notification_text + \"'Open product name is' \" \\\n                                                                       + expected_notification_text\nE       AssertionError: 'Product name after adding to cart ' Coders at Work book has been added to your basket.'Open product name is' Coders at Work has been added to your basket.\n\nmodule_5\\pages\\product_page.py:37: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "browser",
+    "time" : {
+      "start" : 1608327519988,
+      "stop" : 1608327523551,
+      "duration" : 3563
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "hasContent" : false,
+    "stepsCount" : 0
+  } ],
+  "testStage" : {
+    "status" : "skipped",
+    "statusMessage" : "XFAIL\n\nAssertionError: 'Product name after adding to cart ' Coders at Work book has been added to your basket.'Open product name is' Coders at Work has been added to your basket.",
+    "statusTrace" : "self = <module_5.test_product_page.TestProductPage object at 0x0000017A79743D30>, browser = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"a7edb0e42bc53a7606617423c0604d80\")>\nlink = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer7'\n\n    @pytest.mark.parametrize('link',\n                             [\"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0\",\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer1\",\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer2\",\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer3\",\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer4\",\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer5\",\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer6\",\n                              pytest.param(\"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo\"\n                                           \"=offer7\", marks=pytest.mark.xfail),\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer8\",\n                              \"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer9\"])\n    def test_guest_can_add_product_to_basket(self, browser, link):\n        # Data\n        # expected_lang_code = browser.user_language\n        # template = LANGUAGE_DICT[expected_lang_code: = {add_to_basket_notification_tmp}]\n        product_name = \"Coders at Work\"\n        template = \"{} has been added to your basket.\"\n        # Arrange\n        link = f\"{link}\"\n        page = ProductPage(browser, link)\n        page.open()\n        # Act\n        # page.should_be_product_url()\n        page.should_be_name()\n        page.should_be_cost()\n        page.add_product_to_basket()\n        page.solve_quiz_and_get_code()\n        # Assert\n>       page.check_add_to_basket_notification(product_name, template)\n\nmodule_5\\test_product_page.py:52: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <module_5.pages.product_page.ProductPage object at 0x0000017A797FD580>, expected_product_name = 'Coders at Work'\nexpected_notification_template = '{} has been added to your basket.'\n\n    def check_add_to_basket_notification(self, expected_product_name, expected_notification_template):\n        # actual_product_name = self.browser.find_element(By.CSS_SELECTOR, \".alert:nth-child(1) strong\").text\n        # expected_product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME_LOC).text\n        # print(\"Actual product name is \" + actual_product_name, \"Expected product name is \" + expected_product_name)\n        # assert actual_product_name == expected_product_name\n        # {} был добавлен в вашу корзину\n        expected_notification_text = expected_notification_template.format(expected_product_name)\n        actual_notification_text = self.browser.find_element(By.CSS_SELECTOR, \".alert:nth-child(1) .alertinner\").text\n>       assert actual_notification_text == expected_notification_text, \"'Product name after adding to cart ' \" + actual_notification_text + \"'Open product name is' \" \\\n                                                                       + expected_notification_text\nE       AssertionError: 'Product name after adding to cart ' Coders at Work book has been added to your basket.'Open product name is' Coders at Work has been added to your basket.\n\nmodule_5\\pages\\product_page.py:37: AssertionError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "b9a2f077ea64c8ae",
+      "name" : "stdout",
+      "source" : "b9a2f077ea64c8ae.txt",
+      "type" : "text/plain",
+      "size" : 68
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : true,
+    "attachmentsCount" : 1,
+    "hasContent" : true,
+    "stepsCount" : 0
+  },
+  "afterStages" : [ {
+    "name" : "browser::0",
+    "time" : {
+      "start" : 1608327526692,
+      "stop" : 1608327529306,
+      "duration" : 2614
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "hasContent" : false,
+    "stepsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@pytest.mark.xfail"
+  }, {
+    "name" : "parentSuite",
+    "value" : "module_5"
+  }, {
+    "name" : "suite",
+    "value" : "test_product_page"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestProductPage"
+  }, {
+    "name" : "host",
+    "value" : "NNV-W00180"
+  }, {
+    "name" : "thread",
+    "value" : "13164-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "module_5.test_product_page"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "link",
+    "value" : "'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer7'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "@pytest.mark.xfail" ]
+  },
+  "source" : "83e38af3821bdd32.json",
+  "parameterValues" : [ "'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer7'" ]
+}
