@@ -123,16 +123,14 @@ class TestUserAddToBasketFromProductPage:
 
     def test_user_can_add_product_to_basket(self, browser):
         # Data
-        # expected_lang_code = browser.user_language
-        template = LANGUAGE_DICT.get('ru', {}).get('add_to_basket_notification_tmp', "")
         product_name = "Coders at Work"
-        #template = "{} has been added to your basket."
+        template = "{} has been added to your basket."
         # Arrange
         link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0"
         page = ProductPage(browser, link)
         page.open()
         # Act
-        # page.should_be_product_url()
+        #page.should_be_product_url()
         page.should_be_name()
         page.should_be_cost()
         page.add_product_to_basket()
