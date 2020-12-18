@@ -38,8 +38,8 @@ class TestProductPage:
         # template = LANGUAGE_DICT[expected_lang_code: = {add_to_basket_notification_tmp}]
         product_name = "Coders at Work"
         template = "{} has been added to your basket."
-        # Arrange
         link = f"{link}"
+        # Arrange
         page = ProductPage(browser, link)
         page.open()
         # Act
@@ -54,42 +54,60 @@ class TestProductPage:
 
     @pytest.mark.xfail
     def test_guest_cant_see_success_message_after_adding_product_to_basket(self, browser):
+        # Data
         link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207"
+        # Arrange
         page = ProductPage(browser, link)
         page.open()
+        # Act
         page.add_product_to_basket()
+        # Assert
         page.should_not_be_success_message()
 
     def test_guest_cant_see_success_message(self, browser):
+        # Data
         link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207"
+        # Arrange
         page = ProductPage(browser, link)
         page.open()
+        # Assert
         page.should_not_be_success_message()
 
     @pytest.mark.xfail
     def test_message_disappeared_after_adding_product_to_basket(self, browser):
+        # Data
         link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207"
+        # Arrange
         page = ProductPage(browser, link)
         page.open()
+        # Act
         page.add_product_to_basket()
+        # Assert
         page.should_not_be_success_message_is_disappeared()
 
     def test_guest_should_see_login_link_on_product_page(self, browser):
+        # Data
         link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207"
+        # Arrange
         page = ProductPage(browser, link)
         page.open()
+        # Assert
         page.should_be_login_link()
 
     def test_guest_can_go_to_login_page_from_product_page(self, browser):
+        # Data
         link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207"
+        # Arrange
         page = ProductPage(browser, link)
         page.open()
+        # Assert
         page.should_be_login_link()
         page.go_to_login_page()
 
     def test_guest_cant_see_product_in_basket_opened_from_product_page(self, browser):
-        # Arrange
+        # Data
         link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207"
+        # Arrange
         page = ProductPage(browser, link)
         page.open()
         # Act
@@ -116,21 +134,24 @@ class TestUserAddToBasketFromProductPage:
         page.should_be_authorized_user()
 
     def test_user_cant_see_success_message(self, browser):
+        # Data
         link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207"
+        # Arrange
         page = ProductPage(browser, link)
         page.open()
+        # Assert
         page.should_not_be_success_message()
 
     def test_user_can_add_product_to_basket(self, browser):
         # Data
         product_name = "Coders at Work"
         template = "{} has been added to your basket."
-        # Arrange
         link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0"
+        # Arrange
         page = ProductPage(browser, link)
         page.open()
         # Act
-        #page.should_be_product_url()
+        # page.should_be_product_url()
         page.should_be_name()
         page.should_be_cost()
         page.add_product_to_basket()
