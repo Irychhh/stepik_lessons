@@ -33,10 +33,13 @@ class BasePageLocators():
 class BasketPageLocators:
     BASKET_IS_EMPTY_MESS = (By.CSS_SELECTOR, "#content_inner")
     ITEM_BASKET = (By.CSS_SELECTOR, ".basket-items")
+    QUANTITY_LOC = (By.CSS_SELECTOR, "#id_form-0-quantity")
+    SUBMIT_UPDATE = (By.CSS_SELECTOR, ".input-group-btn .btn.btn-default")
 
 
 class SearchPageLocators:
     SEARCH_FIELD = (By.CSS_SELECTOR, "[type='search']")
     SEARCH_BUTTON = (By.CSS_SELECTOR, "[value='Search']")
-    MATCHING_SEARCH_BOOK_NAME = (By.CSS_SELECTOR, ".page-header")
+    MATCHING_FOUND_BOOK_NAME = (By.CSS_SELECTOR, ".page-header")
+    MATCHING_FOUND_BOOK_COST = (By.CSS_SELECTOR, ".price_color")
     SEARCH_BTN_ADD_TO_BASKET_LOC = (By.CSS_SELECTOR, "[type='submit'].btn.btn-primary")

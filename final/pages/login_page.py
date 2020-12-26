@@ -34,3 +34,11 @@ class LoginPage(BasePage):
         input3.send_keys(password)
         submit_register = self.browser.find_element(*LoginPageLocators.GET_REGISTRATION_BTN_LOC)
         submit_register.click()
+
+    def login_user(self, email, password):
+        input1 = self.browser.find_element(*LoginPageLocators.LOGIN_USERNAME_EMAIL)
+        input1.send_keys(email)
+        input2 = self.browser.find_element(*LoginPageLocators.LOGIN_USERNAME_PASSWORD)
+        input2.send_keys(password)
+        submit_login = self.browser.find_element(*LoginPageLocators.GET_LOGIN_BTN_SUBMIT)
+        submit_login.click()

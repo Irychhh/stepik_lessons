@@ -27,11 +27,6 @@ class ProductPage(BasePage):
 
     # поверка наименования добавленного товара
     def check_add_to_basket_notification(self, expected_product_name, expected_notification_template):
-        # actual_product_name = self.browser.find_element(By.CSS_SELECTOR, ".alert:nth-child(1) strong").text
-        # expected_product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME_LOC).text
-        # print("Actual product name is " + actual_product_name, "Expected product name is " + expected_product_name)
-        # assert actual_product_name == expected_product_name
-        # {} был добавлен в вашу корзину
         expected_notification_text = expected_notification_template.format(expected_product_name)
         actual_notification_text = self.browser.find_element(By.CSS_SELECTOR, ".alert:nth-child(1) .alertinner").text
         assert actual_notification_text == expected_notification_text, "'Product name after adding to cart ' " + actual_notification_text + "'Open product name is' " \

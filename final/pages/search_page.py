@@ -17,12 +17,12 @@ class SearchPage(BasePage):
         assert True
 
     def should_be_search_page(self):
-        assert self.is_element_present(*SearchPageLocators.MATCHING_SEARCH_BOOK_NAME), "Search book name is not " \
+        assert self.is_element_present(*SearchPageLocators.MATCHING_FOUND_BOOK_NAME), "Search book name is not " \
                                                                                        "presented, "
 
     # поверка наименования найденного товара
     def should_be_search_book_name(self, book_name):
-        assert book_name in self.browser.find_element(*SearchPageLocators.MATCHING_SEARCH_BOOK_NAME).text, "Incorrect book name"
+        assert book_name in self.browser.find_element(*SearchPageLocators.MATCHING_FOUND_BOOK_NAME).text, "Incorrect book name"
         assert True
 
     # проверка добавления в корзину со страницы результатов поиска
@@ -31,5 +31,5 @@ class SearchPage(BasePage):
             assert self.is_element_present(*SearchPageLocators.SEARCH_BTN_ADD_TO_BASKET_LOC), "Button Add to Basket is not presented"
             button_add_to_basket.click()
 
-    # проверка названия и стоимости добавленного товара
+
 
