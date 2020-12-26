@@ -5,6 +5,7 @@ from datetime import datetime
 
 
 def pytest_addoption(parser):
+    parser.addoption('--browser_name', action='store', default="chrome", help="Choose browser: chrome or firefox")
     parser.addoption('--language', action='store', default='en-GB',
                       help='Choose GUI language for tests')
 
@@ -21,16 +22,22 @@ def browser(request):
 
     print("\nstart browser for test..")
 
-    result = webdriver.Chrome(options=options)
-    result.maximize_window()
-    result.implicitly_wait(7)
-    result.user_language = language
+    browser = webdriver.Chrome(options=options)
+    browser.maximize_window()
+    browser.implicitly_wait(7)
+    browser.user_language = language
 
-    yield result
+    browser_name = request.config.getoption("browser_name")
+    if browser_name == "chrome":
+        print("\nstart chrome browser for test..")
+    else:
+        print("The wrong browser_name is selected in the test")
+
+    yield browser
 
     print("\nquit browser..")
     # получаем переменную с текущей датой и временем в формате ГГГГ-ММ-ДД_ЧЧ-ММ-СС
     now = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
     # делаем скриншот с помощью команды Selenium'а и сохраняем его с именем "screenshot-ГГГГ-ММ-ДД_ЧЧ-ММ-СС"
-    result.save_screenshot('Screenshots/screenshot-%s.png' % now)
-    result.quit()
+    browser.save_screenshot('Screenshots/screenshot-%s.png' % now)
+    browser.quit()
